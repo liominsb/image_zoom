@@ -3,8 +3,8 @@
     "name": "Image Zoom",
     "version": "1.0.0",
     "minAppVersion": "1.5.0",
-    "description": "Lightweight image zoom and drag viewing plugin, supports wheel zoom and mouse drag panning",
-    "author": "AI",
+    "description": "Lightweight image zoom and drag viewing plugin, supports wheel zoom and mouse drag panning.",
+    "author": "Yuxuan Wei",
     "authorUrl": "",
     "fundingUrl": "",
     "isDesktopOnly": false
