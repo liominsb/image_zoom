@@ -30,7 +30,7 @@ export default class ImageZoomPanPlugin extends Plugin {
     };
     private animationFrameId: number | null = null;
 
-    async onload() {
+    onload() {
         // ×¢²áÊÂ¼þ¼àÌýÆ÷
         this.registerEvent(
             this.app.workspace.on('layout-change', () => {
