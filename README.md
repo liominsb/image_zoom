@@ -1,142 +1,142 @@
-# Image Zoom - Obsidian Í¼Æ¬Ëõ·ÅÓëÍÏ×§²å¼ş
+# Image Zoom
 
-Ò»¸öÇáÁ¿¼¶µÄ Obsidian Í¼Æ¬²é¿´²å¼ş£¬Ö§³Ö¹öÂÖËõ·ÅºÍÊó±êÍÏ×§Æ½ÒÆ£¬Ìæ´úÄê¾ÃÊ§ĞŞµÄ Image Toolkit¡£
+A lightweight Obsidian plugin for image zoom and pan. Designed as a drop-in replacement for the unmaintained Image Toolkit.
 
-## ? ¹¦ÄÜÌØĞÔ
+## ğŸ” Features
 
-- **µã»÷·Å´ó**£ºÔÚÔÄ¶ÁÄ£Ê½ºÍÊµÊ±Ô¤ÀÀÄ£Ê½ÏÂµã»÷Í¼Æ¬¼´¿ÉÈ«ÆÁ²é¿´
-- **¹öÂÖËõ·Å**£ºÖ§³ÖÊó±ê¹öÂÖÎŞ¼¶Ëõ·Å£¬ÒÔÊó±êÖ¸ÕëÎ»ÖÃÎªÖĞĞÄ
-- **ÍÏ×§Æ½ÒÆ**£º·Å´óºó¿É°´×¡Êó±ê×ó¼üÍÏ×§ÒÆ¶¯Í¼Æ¬
-- **¿ìËÙÍË³ö**£º°´ `Esc` ¼ü»òµã»÷ºÚÉ«±³¾°¼´¿É¹Ø±Õ
-- **ÇáÁ¿¼¶**£º´¿Ô­ÉúÊµÏÖ£¬ÎŞµÚÈı·½ÒÀÀµ£¬½ö¼¸°ÙĞĞ´úÂë
-- **ĞÔÄÜÓÅ»¯**£ºÊ¹ÓÃ `requestAnimationFrame` ½ÚÁ÷£¬±£Ö¤Ë¿»¬ÌåÑé
-- **ÑùÊ½¸ôÀë**£ºCSS ÀàÃûÊ¹ÓÃÎ¨Ò»Ç°×º£¬²»ÎÛÈ¾ Obsidian Ô­ÉúÑùÊ½
+- **Click to Zoom** â€“ Click any image in Reading or Live Preview mode to view it full-screen.
+- **Scroll to Zoom** â€“ Use the mouse wheel for smooth, stepless zooming centered on the pointer.
+- **Drag to Pan** â€“ When zoomed in, hold the left mouse button and drag to move the image.
+- **Quick Exit** â€“ Press `Esc` or click the dark backdrop to close instantly.
+- **Lightweight** â€“ Vanilla TypeScript, zero dependencies, just a few hundred lines of code.
+- **Performance** â€“ Throttled with `requestAnimationFrame` for buttery-smooth interactions.
+- **Style Isolation** â€“ All CSS classes use a unique prefix to avoid conflicts with Obsidianâ€™s native styles.
 
-## ? °²×°·½·¨
+## âš¡ Installation
 
-### ·½·¨Ò»£ºÊÖ¶¯°²×°£¨ÍÆ¼ö£©
+### Method 1: Manual Installation (Recommended)
 
-1. **ÏÂÔØ²å¼şÎÄ¼ş**
+1. **Download the plugin files**
 
-   ½«ÒÔÏÂÈı¸öÎÄ¼ş×¼±¸ºÃ£º
+   Prepare the following three files:
    - `manifest.json`
-   - `main.js`£¨ĞèÒª±àÒëÉú³É£©
+   - `main.js` (needs to be built)
    - `styles.css`
 
-2. **ÕÒµ½ Obsidian ²å¼şÄ¿Â¼**
+2. **Locate the Obsidian plugins folder**
 
-   - ´ò¿ª Obsidian ÉèÖÃ ¡ú µÚÈı·½²å¼ş ¡ú °²È«Ä£Ê½£¨¹Ø±Õ£©
-   - µã»÷ÎÄ¼ş¼ĞÍ¼±ê´ò¿ª²å¼şÄ¿Â¼
-   - Â·¾¶Í¨³£Îª£º`<ÄãµÄ²Ö¿â>/.obsidian/plugins/`
+   - Open Obsidian **Settings â†’ Community plugins** and turn off **Safe Mode**.
+   - Click the folder icon to open the plugins directory.
+   - The typical path is: `<your vault>/.obsidian/plugins/`
 
-3. **´´½¨²å¼şÎÄ¼ş¼Ğ**
+3. **Create the plugin folder**
 
-   ÔÚ plugins Ä¿Â¼ÏÂ´´½¨ĞÂÎÄ¼ş¼Ğ£º`image-zoom`
+   Inside the `plugins` directory, create a new folder named `image-zoom`.
 
-4. **¸´ÖÆÎÄ¼ş**
+4. **Copy the files**
 
-   ½« `manifest.json`¡¢`main.js`¡¢`styles.css` Èı¸öÎÄ¼ş¸´ÖÆµ½ `image-zoom` ÎÄ¼ş¼ĞÖĞ
+   Copy `manifest.json`, `main.js`, and `styles.css` into the `image-zoom` folder.
 
-5. **ÆôÓÃ²å¼ş**
+5. **Enable the plugin**
 
-   - ÖØÆô Obsidian
-   - ½øÈëÉèÖÃ ¡ú µÚÈı·½²å¼ş
-   - ÕÒµ½ "Image Zoom & Pan" ²¢ÆôÓÃ
+   - Restart Obsidian.
+   - Go to **Settings â†’ Community plugins**.
+   - Find **Image Zoom** and enable it.
 
-### ·½·¨¶ş£º¿ª·¢Ä£Ê½°²×°
+### Method 2: Development Mode Installation
 
-1. **¿ËÂ¡»òÏÂÔØ±¾ÏîÄ¿**
+1. **Clone or download this repository**
 
    ```bash
    git clone <repository-url>
    cd image-zoom-pan
    ```
 
-2. **°²×°ÒÀÀµ**
+2. **Install dependencies**
 
    ```bash
    npm install
    ```
 
-3. **±àÒë²å¼ş**
+3. **Build the plugin**
 
    ```bash
    npm run build
    ```
 
-4. **Á´½Óµ½ Obsidian**
+4. **Copy to your Obsidian vault**
 
-   ½«±àÒëºóµÄÎÄ¼ş¸´ÖÆµ½ÄãµÄ Obsidian ²Ö¿âµÄ²å¼şÄ¿Â¼£º
+   Copy the built files to your vaultâ€™s plugins folder:
    ```
-   <ÄãµÄ²Ö¿â>/.obsidian/plugins/image-zoom-pan/
+   <your vault>/.obsidian/plugins/image-zoom-pan/
    ```
 
-5. **ÆôÓÃ²å¼ş**
+5. **Enable the plugin**
 
-   ÔÚ Obsidian ÉèÖÃÖĞÆôÓÃ²å¼ş
+   Enable the plugin in Obsidianâ€™s settings.
 
-## ?? ¿ª·¢Ö¸ÄÏ
+## ğŸš€ Development
 
-### »·¾³ÒªÇó
+### Prerequisites
 
 - Node.js >= 16
-- npm »ò yarn
+- npm or yarn
 
-### ¿ª·¢²½Öè
+### Commands
 
 ```bash
-# °²×°ÒÀÀµ
+# Install dependencies
 npm install
 
-# ¿ª·¢Ä£Ê½£¨×Ô¶¯±àÒë£©
+# Development mode (auto-rebuild)
 npm run dev
 
-# Éú²ú¹¹½¨
+# Production build
 npm run build
 ```
 
-### ÏîÄ¿½á¹¹
+### Project Structure
 
 ```
 image-zoom/
-©À©¤©¤ manifest.json    # ²å¼şÅäÖÃÎÄ¼ş
-©À©¤©¤ main.ts          # ºËĞÄÒµÎñÂß¼­
-©À©¤©¤ styles.css       # ÑùÊ½ÎÄ¼ş
-©À©¤©¤ package.json     # ÏîÄ¿ÒÀÀµ
-©À©¤©¤ tsconfig.json    # TypeScript ÅäÖÃ
-©À©¤©¤ esbuild.config.mjs  # ¹¹½¨ÅäÖÃ
-©¸©¤©¤ README.md        # ËµÃ÷ÎÄµµ
+â”œâ”€â”€ manifest.json         # Plugin metadata
+â”œâ”€â”€ main.ts               # Core logic
+â”œâ”€â”€ styles.css            # Stylesheet
+â”œâ”€â”€ package.json          # Dependencies & scripts
+â”œâ”€â”€ tsconfig.json         # TypeScript configuration
+â”œâ”€â”€ esbuild.config.mjs    # Build configuration
+â””â”€â”€ README.md             # This file
 ```
 
-## ? Ê¹ÓÃËµÃ÷
+## ğŸ’¡ Usage
 
-1. ÔÚÔÄ¶ÁÄ£Ê½»òÊµÊ±Ô¤ÀÀÄ£Ê½ÏÂ£¬**µ¥»÷**ÈÎÒâÍ¼Æ¬
-2. Í¼Æ¬½«ÔÚºÚÉ«°ëÍ¸Ã÷±³¾°ÉÏ¾ÓÖĞÏÔÊ¾
-3. **¹öÂÖËõ·Å**£º¹ö¶¯Êó±ê¹öÂÖ·Å´ó/ËõĞ¡Í¼Æ¬£¨ÒÔÊó±êÎ»ÖÃÎªÖĞĞÄ£©
-4. **ÍÏ×§ÒÆ¶¯**£º·Å´óºó£¬°´×¡Êó±ê×ó¼üÍÏ×§¿ÉÒÆ¶¯Í¼Æ¬
-5. **ÍË³ö²é¿´**£º
-   - °´ `Esc` ¼ü
-   - µã»÷ºÚÉ«±³¾°¿Õ°×ÇøÓò
+1. In Reading or Live Preview mode, **click** any image.
+2. The image appears centered on a semi-transparent black backdrop.
+3. **Scroll to zoom** â€“ Use the mouse wheel to zoom in/out, centered on the cursor.
+4. **Drag to pan** â€“ While zoomed in, drag with the left mouse button.
+5. **Exit the viewer**:
+   - Press the `Esc` key.
+   - Click the dark background outside the image.
 
-## ?? ¼¼ÊõÊµÏÖ
+## ğŸ› ï¸ Under the Hood
 
-- **´¿Ô­ÉúÊµÏÖ**£º½öÊ¹ÓÃ TypeScript + DOM API£¬ÎŞµÚÈı·½ UI ¿â
-- **ĞÔÄÜÓÅ»¯**£ºÍÏ×§ºÍËõ·ÅÊ¹ÓÃ `requestAnimationFrame` ½ÚÁ÷
-- **ÑùÊ½¸ôÀë**£ºËùÓĞ CSS ÀàÃûÊ¹ÓÃ `my-custom-zoom-` Ç°×º
-- **¼æÈİĞÔ**£ºÖ§³Ö Obsidian v1.5+ ¼°ÒÔÉÏ°æ±¾
+- **Vanilla Implementation** â€“ Uses only TypeScript and DOM APIs. No UI frameworks.
+- **Optimized Rendering** â€“ Drag and zoom events are throttled with `requestAnimationFrame`.
+- **Scoped Styles** â€“ All CSS classes are prefixed with `my-custom-zoom-` to prevent leaks.
+- **Broad Compatibility** â€“ Works with Obsidian v1.5.0 and above.
 
-## ? ÎÊÌâ·´À¡
+## â“ Troubleshooting
 
-Èç¹ûÓöµ½ÎÊÌâ£¬Çë¼ì²é£º
+If something isnâ€™t working, please verify:
 
-1. Obsidian °æ±¾ÊÇ·ñ >= 1.5.0
-2. ²å¼şÊÇ·ñÕıÈ·°²×°²¢ÆôÓÃ
-3. ÊÇ·ñÔÚÔÄ¶ÁÄ£Ê½»òÊµÊ±Ô¤ÀÀÄ£Ê½ÏÂ²Ù×÷
+1. Obsidian is version 1.5.0 or later.
+2. The plugin is correctly installed and enabled.
+3. You are in Reading mode or Live Preview mode (not Source mode).
 
-## ? Ğí¿ÉÖ¤
+## ğŸ“„ License
 
 MIT License
 
-## ? ÖÂĞ»
+## ğŸ™ Acknowledgements
 
-Áé¸ĞÀ´Ô´ÓÚ Image Toolkit ²å¼ş£¬±¾²å¼şÎªÆäÇáÁ¿¼¶Ìæ´ú·½°¸¡£
+Inspired by Image Toolkit. This plugin offers a modern, maintainable alternative with a focus on simplicity and performance.
